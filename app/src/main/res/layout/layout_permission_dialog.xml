@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_permission_dialog"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:text="提示"
+        android:textColor="@color/bg_95"
+        android:textSize="@dimen/txt_size_18"/>
+    <TextView
+        android:id="@+id/content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:text="您拒绝了系统获取图片权限，将不能正常使用相册功能，您可以去设置开启权限"
+        android:textColor="@color/bg_95"
+        android:textSize="@dimen/txt_size_14"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/setting_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:padding="10dp"
+            android:text="设置"
+            android:textColor="@color/color_red"
+            android:textSize="@dimen/txt_size_15"/>
+        <TextView
+            android:id="@+id/cancel_setting_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/setting_tv"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="@color/color_red"
+            android:textSize="@dimen/txt_size_15"/>
+    </RelativeLayout>
+
+</LinearLayout>

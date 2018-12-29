@@ -1,5 +1,6 @@
 package com.armap.armap;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,7 +47,7 @@ public class MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mMapView = findViewById(R.id.bmapView);
+        mMapView = (MapView)findViewById(R.id.bmapView);
         // 隐藏logo
         View child = mMapView.getChildAt(1);
         if (child != null && (child instanceof ImageView || child instanceof ZoomControls))
@@ -79,6 +80,8 @@ public class MainActivity
         setListener();
     }
 
+
+
     public void markGlobalCenter()
     {
         LatLng locationll = new LatLng(30.574935, 104.070742);
@@ -95,7 +98,7 @@ public class MainActivity
             {
                 if (marker == mMarkerA)
                 {
-                    Toast.makeText(MainActivity.this, "环球中心", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this,ARActivity.class));
                 }
                 return false;
             }

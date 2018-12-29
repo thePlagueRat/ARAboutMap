@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ARMap</string>
+    <string name="phone_storage_permission_warn"> 为了保证您正常、安全使用软件，当提示获取您定位和存储空间权限时，请点击允许。</string>
+    <string name="phone_storage_permission_warn_again"> 未取得您的使用权限，软件无法运行。请在应用权限设置开启权限。</string>
 </resources>

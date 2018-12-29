@@ -12,7 +12,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.armap.armap"
-        minSdkVersion 26
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -22,14 +22,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
+        debug {
+            minifyEnabled false;
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 
-    sourceSets {
-        main {
-            jniLibs.srcDir('libs')
-        }
-    }
 }
 
 dependencies {
@@ -39,5 +42,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation files('src/main/jniLibs/BaiduLBS_Android.jar')
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-v4:28.0.0'
+        }
+    }
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
 }
