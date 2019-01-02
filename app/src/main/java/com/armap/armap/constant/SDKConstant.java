@@ -4,7 +4,7 @@ public class SDKConstant
 {
     public static String QQ_LOGIN_ID = "1107998003";
 
-    public static String AR_APP_ID = "15277388";
-    public static String AR_API_KEY = "bsCf7inI6mC6DVuDGdMeClQj";
-    public static String AR_SECRET_KEY = "7wTM6ps2x4t4agjbQ3dPUkyIH3zAZBx5";
+    public static String AR_APP_ID = "15322454";
+    public static String AR_API_KEY = "dkLkY29MhMxi6dxToYs28ODT";
+    public static String AR_SECRET_KEY = "E7qyekP9AiLY5ozTFSMGpl8XnPFhYl9p";
 }
