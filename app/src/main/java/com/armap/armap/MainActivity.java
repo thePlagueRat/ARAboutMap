@@ -56,30 +56,38 @@ public class MainActivity
         }
 
         mBaiduMap = mMapView.getMap();
-        mBaiduMap.setMyLocationEnabled(true);
-        LocationClient mLocClient = new LocationClient(this);
-        mLocClient.registerLocationListener(new MyLocationListenner());
-        LocationClientOption option = new LocationClientOption();
-        option.setOpenGps(true); // 打开gps
-        option.setCoorType("bd09ll"); // 设置坐标类型
-        option.setScanSpan(1000);
-        mLocClient.setLocOption(option);
-        mLocClient.start();
+        mBaiduMap.setMyLocationEnabled(false);
+        MyLocationData locationData = new MyLocationData.Builder().latitude(30.574935).longitude(104.070742).build();
+        mBaiduMap.setMyLocationData(locationData);
+        // 自定以图表
+        BitmapDescriptor marker = BitmapDescriptorFactory
+                .fromResource(R.drawable.icon_geo);
+        // 设置定位图层的配置，设置图标跟随状态（图标一直在地图中心）
+        MyLocationConfiguration config = new MyLocationConfiguration(
+                MyLocationConfiguration.LocationMode.FOLLOWING, false, null);
+        mBaiduMap.setMyLocationConfigeration(config);
+//        LocationClient mLocClient = new LocationClient(this);
+//        mLocClient.registerLocationListener(new MyLocationListenner());
+//        LocationClientOption option = new LocationClientOption();
+//        option.setOpenGps(true); // 打开gps
+//        option.setCoorType("bd09ll"); // 设置坐标类型
+//        option.setScanSpan(1000);
+//        mLocClient.setLocOption(option);
+//        mLocClient.start();
 
 
         // 设置定位图层的配置（定位模式，是否允许方向信息，用户自定义定位图标）
 
-        BitmapDescriptor mCurrentMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_geo);
-        MyLocationConfiguration.LocationMode mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
-        MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode, true, mCurrentMarker);
-        mBaiduMap.setMyLocationConfiguration(config);
+//        BitmapDescriptor mCurrentMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_geo);
+//        MyLocationConfiguration.LocationMode mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
+//        MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode, true, mCurrentMarker);
+//        mBaiduMap.setMyLocationConfiguration(config);
 
         // 当不需要定位图层时关闭定位图层
         markGlobalCenter();
 
         setListener();
     }
-
 
 
     public void markGlobalCenter()
@@ -98,7 +106,7 @@ public class MainActivity
             {
                 if (marker == mMarkerA)
                 {
-                    startActivity(new Intent(MainActivity.this,ARActivity.class));
+                    startActivity(new Intent(MainActivity.this, ARActivity.class));
                 }
                 return false;
             }

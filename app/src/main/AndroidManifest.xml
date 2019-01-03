@@ -61,7 +61,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="1107998003" />
+                <data android:scheme="101541974" />
             </intent-filter>
         </activity>
         <activity
